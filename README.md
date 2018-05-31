@@ -1,4 +1,12 @@
-# kubernetes-playground
+# Roadmap
+
+1. Get started with minikube
+
+2. Prometheus on minikube
+
+3. Tracking coderbunker community websites
+
+
 
 # Commands
 
