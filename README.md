@@ -13,3 +13,11 @@
 - expose service: `kubectl expose deployment nginx --type=NodePort`
 
 - access service: `curl $(minikube service nginx --url)`
+
+
+
+
+
+## Reference
+
+1. [Running Kubernetes Locally via Minikube](https://kubernetes.io/docs/setup/minikube/#alternative-container-runtimes)
