@@ -1,12 +1,4 @@
-# Roadmap
-
-1. Get started with minikube
-
-2. Prometheus on minikube
-
-3. Tracking coderbunker community websites
-
-
+# Workshop-1 Start a nginx container with minikube
 
 # Commands
 
