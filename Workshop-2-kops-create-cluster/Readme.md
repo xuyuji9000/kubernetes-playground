@@ -14,3 +14,11 @@
 3. Login to master instance
 
     `ssh -i ~/.ssh/id_rsa admin@master-dns`
+
+4. Control cluster from local
+
+    ``` bash
+    kops export kubecfg $NAME
+    export NAME=test-kx.k8s.local
+    kubectl get pods --all-namespaces
+    ```
