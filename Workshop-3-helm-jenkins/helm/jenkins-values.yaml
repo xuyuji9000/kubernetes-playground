@@ -11,7 +11,7 @@
 Master:
   Name: jenkins-master
   Image: "jenkins/jenkins"
-  ImageTag: "2.141"
+  ImageTag: "2.162-alpine"
   ImagePullPolicy: "Always"
   Component: "jenkins-master"
   UseSecurity: true
@@ -53,7 +53,7 @@ Master:
 Agent:
   Enabled: true
   Image: jenkins/jnlp-slave
-  ImageTag: 3.10-1
+  ImageTag: 3.27-1-alpine
   Component: "jenkins-slave"
   Privileged: false
   Cpu: "200m"
