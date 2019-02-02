@@ -3,6 +3,7 @@
 
     ``` bash
     kubectl apply -f ./jenkins
+    helm init --service-account tiller
     helm install --name jenkins -f helm/jenkins-values.yaml stable/jenkins --namespace jenkins-project
     # First time get admin user password
     printf $(kubectl get secret --namespace jenkins-project jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode);echo
@@ -18,6 +19,7 @@
     ``` bash
     kubectl delete -f ./jenkins
     helm delete --purge jenkins
+    helm reset
     ```
 
 
