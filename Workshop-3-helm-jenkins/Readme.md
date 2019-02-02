@@ -21,8 +21,13 @@
     ```
 
 
+- Delete helm chart
+
+    `helm delete --purge jenkins`
+
 # Reference 
 
 1. [Deploy Jenkins with dynamic slaves on Minikube](https://itnext.io/deploy-jenkins-with-dynamic-slaves-in-minikube-8aef5404e9c1)
 
 2. [Jenkins Helm Chart](https://github.com/helm/charts/tree/master/stable/jenkins)
+
