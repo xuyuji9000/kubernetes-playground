@@ -14,18 +14,13 @@
 
     `helm upgrade jenkins stable/jenkins -f helm/jenkins-values.yaml --namespace jenkins-project`
 
-- Delete
+- Clean up
 
     ``` bash
-    kubectl delete -f ./jenkins
     helm delete --purge jenkins
     helm reset
+    kubectl delete -f ./jenkins
     ```
-
-
-- Delete helm chart
-
-    `helm delete --purge jenkins`
 
 # Reference 
 
