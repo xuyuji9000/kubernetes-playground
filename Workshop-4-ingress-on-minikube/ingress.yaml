@@ -9,7 +9,7 @@ spec:
   #   serviceName: default-http-backend
   #   servicePort: 80
   rules:
-  - host: myminikube.info
+  - host: nginx.yogiman.cn
     http:
       paths:
       - path: /
