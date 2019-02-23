@@ -22,3 +22,10 @@
     export NAME=test-kx.k8s.local
     kubectl get pods --all-namespaces
     ```
+5. Delete cluster
+
+    ``` bash
+    export NAME=test-kx.k8s.local
+    kops delete cluster $NAME
+    ```
+    
