@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-index
+  labels:
+    name: nginx-index
+data:
+  index.html: |
+    Hello World!
