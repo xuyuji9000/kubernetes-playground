@@ -1,0 +1,12 @@
+master:
+  ingress:
+    enabled: true
+    hostName: jenkins-1.yogiman.cn
+    tls:
+    - secretName: yogiman.cn
+      hosts:
+      - jenkins-1.yogiman.cn   
+  serviceType: ClusterIP
+persistence:
+  enabled: true
+  existingClaim: jenkins

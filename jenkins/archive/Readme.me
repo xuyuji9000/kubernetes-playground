@@ -1,0 +1,24 @@
+- Install Jenkins 
+
+``` bash
+helm install --namespace jenkins \
+-f ./values.yaml \
+--name jenkins \
+stable/jenkins
+```
+
+- Upgrade Jenkins
+
+``` bash
+helm upgrade --namespace jenkins \
+-f ./values.yaml \
+jenkins stable/jenkins
+```
+
+- Access initContainer logs
+
+``` bash
+kubectl logs -f \
+-n jenkins jenkins-759cf6bbbf-jqgwc \
+-c copy-default-config
+```
