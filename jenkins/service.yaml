@@ -12,11 +12,28 @@ spec:
       labels:
         app: jenkins
     spec:
+      initContainers:
+      - name: "volume-mount-permission"
+        image: "busybox"
+        command: ["/bin/chown", "-R", "1000", "/var/jenkins_home"]
+        volumeMounts:
+          - name: "jenkins-home"
+            mountPath: "/var/jenkins_home"
+        securityContext:
+          runAsUser: 0
       containers:
       - name: jenkins
         image: jenkins/jenkins:lts
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: /var/jenkins_home
+          name: jenkins-home
+          
+      volumes:
+        - name: jenkins-home
+          persistentVolumeClaim:
+            claimName: jenkins
 ---
 apiVersion: v1
 kind: Service
@@ -39,10 +56,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - jenkins-1.yogiman.cn
+    - jenkins.yogiman.cn
     secretName: yogiman.cn
   rules:
-  - host: jenkins-1.yogiman.cn
+  - host: jenkins.yogiman.cn
     http:
       paths:
       - path: /
