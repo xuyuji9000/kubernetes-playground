@@ -17,6 +17,9 @@ spec:
       - name: "volume-mount-permission"
         image: "busybox"
         command: ["/bin/chown", "-R", "1000", "/var/jenkins_home"]
+        env:
+        - name: JENKINS_SLAVE_AGENT_PORT
+          value: "50000"
         volumeMounts:
           - name: "jenkins-home"
             mountPath: "/var/jenkins_home"
@@ -27,6 +30,7 @@ spec:
         image: jenkins/jenkins:lts
         ports:
         - containerPort: 8080
+        - containerPort: 50000
         volumeMounts:
         - mountPath: /var/jenkins_home
           name: jenkins-home
@@ -43,8 +47,13 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - port: 80
+  - name: http
+    port: 80
     targetPort: 8080
+  - name: agent
+    port: 50000
+    targetPort: 50000
+    protocol: TCP
   selector:
     app: jenkins
 ---
