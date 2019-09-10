@@ -12,6 +12,7 @@ spec:
       labels:
         app: jenkins
     spec:
+      serviceAccountName: jenkins
       initContainers:
       - name: "volume-mount-permission"
         image: "busybox"
