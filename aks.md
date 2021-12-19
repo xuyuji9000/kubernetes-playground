@@ -15,12 +15,12 @@ az account list-locations|less -i
 
 ``` shell
 az group create --location japanwest \
---name test-kx
+--name testkx
 ```
 
 - Create AKS
 
 ``` shell
-az aks create --name test-kx \
---resource-group test-kx
+time az aks create --name testkx \
+--resource-group testkx
 ```
