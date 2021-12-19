@@ -22,5 +22,7 @@ az group create --location japanwest \
 
 ``` shell
 time az aks create --name testkx \
---resource-group testkx
+--resource-group testkx \
+-node-count 1 \
+--kubernetes-version 1.20.9
 ```
